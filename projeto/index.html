@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+
+    <body>
+
+        <link rel="stylesheet" type="text/css" href="css/kaue.css">
+
+
+        <header>
+            <a href="#" class="logo">Projeto</a>
+            <ul>
+                <li class="#" class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+
+        </header>
+        <!---Imagens-->
+        <section>
+            <img src="img/stars.png" alt="erro" id="stars">
+            <!--text-->
+            <h2 id="text">Kauê</h2>
+            <!--the-end-->
+            <a href="#sec" id="btn">Explorar</a>
+            <img src="img/moon.png" alt="erro" id="moon">
+            <img src="img/mountains_behind.png" alt="erro" id="mountains_behind">
+            <img src="img/mountains_front.png" alt="erro" id="mountains_front">
+            <!---the-end-->
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Projeto</h2>
+            <p>Projeto desenvolvido em Html5,Css e java script o intuito desse projeto e mostrar os efeitos do parallax em JavaScript e Css.
+                <br>Desenvolvido por Kauê
+            </p>
+
+        </div>
+
+        <!---Javascript-->
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+
+            window.addEventListener('scroll', function() {
+
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.05 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                let header = document.querySelector('header');
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+        <!--the-end-->
+
+</head>
+</body>
+
+</html>
